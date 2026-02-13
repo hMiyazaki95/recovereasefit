@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="foamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="foamShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.15" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+    <filter id="shadow5" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#00000025"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="400" rx="16" fill="#f3f4f6"/>
+  <pattern id="grid5" width="20" height="20" patternUnits="userSpaceOnUse">
+    <rect width="20" height="20" fill="none" stroke="#e5e7eb" stroke-width="0.5"/>
+  </pattern>
+  <rect width="400" height="400" rx="16" fill="url(#grid5)" opacity="0.3"/>
+  <!-- Foam roller - angled perspective -->
+  <g filter="url(#shadow5)" transform="rotate(-15, 200, 180)">
+    <!-- Main cylinder body -->
+    <rect x="80" y="135" width="240" height="90" rx="45" fill="url(#foamGrad)"/>
+    <!-- Texture pattern - diamond/honeycomb ridges -->
+    <!-- Row 1 -->
+    <path d="M120 155 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M148 155 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M176 155 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M204 155 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M232 155 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M260 155 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <!-- Row 2 offset -->
+    <path d="M134 175 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M162 175 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M190 175 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M218 175 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M246 175 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <!-- Row 3 -->
+    <path d="M120 195 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M148 195 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M176 195 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M204 195 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M232 195 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <path d="M260 195 l8-8 l8 8 l-8 8 z" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.6"/>
+    <!-- Shine overlay -->
+    <rect x="80" y="135" width="240" height="45" rx="45" fill="url(#foamShine)"/>
+    <!-- Left end cap -->
+    <ellipse cx="80" cy="180" rx="12" ry="45" fill="#334155"/>
+    <ellipse cx="80" cy="180" rx="12" ry="45" fill="#ffffff" opacity="0.05"/>
+    <!-- Right end cap -->
+    <ellipse cx="320" cy="180" rx="12" ry="45" fill="#1e293b"/>
+    <!-- Orange accent rings -->
+    <ellipse cx="100" cy="180" rx="3" ry="42" fill="none" stroke="#f97316" stroke-width="2" opacity="0.5"/>
+    <ellipse cx="300" cy="180" rx="3" ry="42" fill="none" stroke="#f97316" stroke-width="2" opacity="0.5"/>
+  </g>
+  <!-- Product name -->
+  <text x="200" y="305" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#1f2937">Foam Roller</text>
+  <text x="200" y="330" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#9ca3af">Textured Surface</text>
+</svg>

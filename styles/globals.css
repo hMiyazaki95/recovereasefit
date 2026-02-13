@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure CSS variables are properly defined */
+@layer base {
+  :root {
+    --tw-content: '';
+    --primary-color: #2563eb;
+    --secondary-color: #3b82f6;
+    --accent-color: #60a5fa;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --background: #ffffff;
+    --card-bg: #f8fafc;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative font-semibold text-gray-700 hover:text-blue-600 cursor-pointer text-[17px] w-fit md:block after:content-[''] after:absolute after:-inset-x-0 after:bottom-0 after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center hidden;
+  }
+  .nav-link-mobile {
+    @apply relative mb-[2rem] font-semibold text-gray-800 cursor-pointer text-[27px] w-fit md:block after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center;
+  }
+
+  .heading {
+    @apply text-center text-gray-900 text-[28px] sm:text-[33px] md:text-[45px] font-bold;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 p-6;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+}

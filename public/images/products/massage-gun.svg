@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="gunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#374151;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f2937;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gunShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.12" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient id="gunAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fb923c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow7" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#00000025"/>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="400" rx="16" fill="#f3f4f6"/>
+  <pattern id="grid7" width="20" height="20" patternUnits="userSpaceOnUse">
+    <rect width="20" height="20" fill="none" stroke="#e5e7eb" stroke-width="0.5"/>
+  </pattern>
+  <rect width="400" height="400" rx="16" fill="url(#grid7)" opacity="0.3"/>
+  <!-- Massage Gun -->
+  <g filter="url(#shadow7)">
+    <!-- Gun head (top barrel) -->
+    <rect x="155" y="70" width="90" height="55" rx="12" fill="url(#gunGrad)"/>
+    <rect x="155" y="70" width="90" height="55" rx="12" fill="url(#gunShine)"/>
+    <!-- Massage head tip -->
+    <circle cx="200" cy="70" r="22" fill="#4b5563"/>
+    <circle cx="200" cy="70" r="16" fill="#6b7280"/>
+    <circle cx="200" cy="70" r="10" fill="#9ca3af"/>
+    <circle cx="200" cy="64" r="5" fill="#ffffff" opacity="0.2"/>
+    <!-- Gun body (main housing) -->
+    <rect x="148" y="120" width="104" height="90" rx="16" fill="url(#gunGrad)"/>
+    <rect x="148" y="120" width="104" height="45" rx="16" fill="url(#gunShine)"/>
+    <!-- Orange accent stripe -->
+    <rect x="148" y="148" width="104" height="4" rx="2" fill="url(#gunAccent)"/>
+    <!-- Speed indicator dots -->
+    <circle cx="178" cy="170" r="4" fill="#f97316"/>
+    <circle cx="193" cy="170" r="4" fill="#f97316" opacity="0.6"/>
+    <circle cx="208" cy="170" r="4" fill="#f97316" opacity="0.3"/>
+    <circle cx="223" cy="170" r="4" fill="#f97316" opacity="0.15"/>
+    <!-- LED display area -->
+    <rect x="172" y="182" width="56" height="18" rx="4" fill="#111827"/>
+    <text x="200" y="195" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700" fill="#f97316">3200</text>
+    <!-- Handle (grip) going down -->
+    <path d="M168 205 L162 260 Q158 290 175 300 L225 300 Q242 290 238 260 L232 205 Z" fill="url(#gunGrad)"/>
+    <path d="M168 205 L162 260 Q158 290 175 300 L225 300 Q242 290 238 260 L232 205 Z" fill="url(#gunShine)"/>
+    <!-- Grip texture lines -->
+    <line x1="175" y1="230" x2="225" y2="230" stroke="#4b5563" stroke-width="2" stroke-linecap="round"/>
+    <line x1="174" y1="242" x2="226" y2="242" stroke="#4b5563" stroke-width="2" stroke-linecap="round"/>
+    <line x1="173" y1="254" x2="227" y2="254" stroke="#4b5563" stroke-width="2" stroke-linecap="round"/>
+    <line x1="174" y1="266" x2="226" y2="266" stroke="#4b5563" stroke-width="2" stroke-linecap="round"/>
+    <line x1="176" y1="278" x2="224" y2="278" stroke="#4b5563" stroke-width="2" stroke-linecap="round"/>
+    <!-- Trigger button -->
+    <rect x="190" y="210" width="20" height="12" rx="6" fill="#f97316"/>
+    <rect x="192" y="211" width="16" height="5" rx="3" fill="#ffffff" opacity="0.3"/>
+  </g>
+  <!-- Product name -->
+  <text x="200" y="340" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#1f2937">Massage Gun</text>
+  <text x="200" y="365" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#9ca3af">Percussion Therapy</text>
+</svg>
