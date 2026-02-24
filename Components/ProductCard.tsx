@@ -47,6 +47,13 @@ const ProductCard = ({ product }: Props) => {
           </h3>
         </Link>
 
+        {/* Stars */}
+        <div className="flex items-center gap-1 mb-2">
+          <span className="text-[#FFA41C] text-sm leading-none">★★★★★</span>
+          <span className="text-xs text-[#007185] hover:text-[#C7511F] cursor-pointer">4.9</span>
+          <span className="text-xs text-[#007185] hover:text-[#C7511F] cursor-pointer">(127)</span>
+        </div>
+
         {/* Price */}
         <div className="flex items-center gap-2 mb-3">
           <div className="text-lg font-bold text-gray-900">
