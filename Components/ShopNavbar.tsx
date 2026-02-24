@@ -97,10 +97,10 @@ const ShopNavbar = () => {
             <Link
               href="/"
               className="shrink-0 flex items-center group"
-              aria-label="Fitness Gear – Home"
+              aria-label="RecoverEaseFit – Home"
             >
               <span className="text-xl lg:text-[22px] font-bold tracking-tight text-gray-900 transition-opacity group-hover:opacity-80">
-                Fitness<span className="text-orange-500">Gear</span>
+                RecoverEase<span className="text-orange-500">Fit</span>
               </span>
             </Link>
 
