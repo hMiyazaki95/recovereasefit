@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
 
       lineItems.push({
         price_data: {
-          currency: 'usd',
+          currency: 'gbp',
           product_data: {
             name: product.name,
             description: product.description || undefined,
@@ -94,6 +94,9 @@ export async function POST(request: NextRequest) {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
+      shipping_address_collection: { allowed_countries: ['GB', 'US', 'CA', 'AU', 'IE', 'DE', 'FR', 'NL'] },
+      billing_address_collection: 'auto',
+      phone_number_collection: { enabled: true },
       success_url: `${appUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${appUrl}/cart`,
       metadata: {

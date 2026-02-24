@@ -3,6 +3,7 @@ import { headers } from 'next/headers';
 import Stripe from 'stripe';
 import { stripe } from '@/lib/stripe';
 import { getServiceSupabase } from '@/lib/supabase';
+import { sendFulfilmentEmail } from '@/lib/email';
 
 /**
  * Stripe Webhook Handler
@@ -147,6 +148,82 @@ async function handleCheckoutSessionCompleted(
 
     if (updateError) {
       console.error(`Failed to update stock for ${item.product_id}:`, updateError);
+    }
+  }
+
+  // Build fulfilment record
+  const token = crypto.randomUUID();
+  // shipping_details is present at runtime but not in all SDK type versions
+  const sessionAny = session as any;
+  const shipping = sessionAny.shipping_details?.address;
+  const customerName =
+    sessionAny.shipping_details?.name ||
+    session.customer_details?.name ||
+    'Customer';
+  const customerEmail =
+    session.customer_details?.email || userId;
+  const customerPhone = session.customer_details?.phone || '';
+
+  const fulfilmentItems = items.map((item: any) => {
+    const product = products.find((p) => p.id === item.product_id);
+    return {
+      product_id: item.product_id,
+      name: product?.name || item.product_id,
+      quantity: item.quantity,
+      price: product?.price || 0,
+      cj_variant_id: product?.cj_variant_id || null,
+    };
+  });
+
+  const { error: fulfilError } = await supabase
+    .from('order_fulfillments')
+    .insert({
+      order_id: order.id,
+      token,
+      status: 'pending',
+      customer_email: customerEmail,
+      customer_name: customerName,
+      customer_phone: customerPhone,
+      shipping_address: shipping
+        ? {
+            line1: shipping.line1,
+            line2: shipping.line2,
+            city: shipping.city,
+            state: shipping.state,
+            postal_code: shipping.postal_code,
+            country: shipping.country,
+          }
+        : null,
+      items: fulfilmentItems,
+      total_amount: totalAmount,
+    });
+
+  if (fulfilError) {
+    console.error('Failed to create fulfilment record:', fulfilError.message);
+  } else {
+    // Send confirmation email to owner
+    try {
+      await sendFulfilmentEmail({
+        orderId: order.id,
+        token,
+        customerEmail,
+        customerName,
+        customerPhone,
+        shippingAddress: shipping
+          ? {
+              line1: shipping.line1 ?? undefined,
+              line2: shipping.line2 ?? undefined,
+              city: shipping.city ?? undefined,
+              state: shipping.state ?? undefined,
+              postal_code: shipping.postal_code ?? undefined,
+              country: shipping.country ?? undefined,
+            }
+          : {},
+        items: fulfilmentItems,
+        totalAmount,
+      });
+    } catch (emailErr) {
+      console.error('Failed to send fulfilment email:', emailErr);
     }
   }
 

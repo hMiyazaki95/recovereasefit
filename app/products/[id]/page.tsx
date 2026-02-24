@@ -116,7 +116,7 @@ export default async function ProductPage({
               <div>
                 <h3 className="font-bold text-gray-900">Free Shipping</h3>
                 <p className="text-sm text-gray-600">
-                  On orders over $50
+                  On orders over £50
                 </p>
               </div>
             </div>
