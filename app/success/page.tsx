@@ -61,7 +61,7 @@ export default function SuccessPage() {
               <div>
                 <h3 className="font-bold text-gray-900">Order Processing</h3>
                 <p className="text-sm text-gray-600">
-                  We're preparing your order for shipment
+                  We&apos;re preparing your order for shipment
                 </p>
               </div>
             </li>
@@ -72,7 +72,7 @@ export default function SuccessPage() {
               <div>
                 <h3 className="font-bold text-gray-900">Shipping Confirmation</h3>
                 <p className="text-sm text-gray-600">
-                  You'll receive a tracking number via email within 24-48 hours
+                  You&apos;ll receive a tracking number via email within 24-48 hours
                 </p>
               </div>
             </li>
