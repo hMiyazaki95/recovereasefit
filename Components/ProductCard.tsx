@@ -66,13 +66,6 @@ const ProductCard = ({ product }: Props) => {
           )}
         </div>
 
-        {/* Stock Info */}
-        {inStock && (
-          <div className="text-xs text-gray-500 mb-3">
-            ${product.price.toFixed(2)} - ${(product.price * 1.2).toFixed(2)}
-          </div>
-        )}
-
         {/* Shop Now Button */}
         <Link href={`/products/${product.id}`}>
           <button
