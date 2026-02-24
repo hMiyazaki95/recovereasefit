@@ -112,13 +112,13 @@ export default async function ShopPage() {
                 Built by athletes,<br />for athletes.
               </h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Fitness Gear was founded with one mission: to make premium recovery and training equipment accessible to everyone — from weekend warriors to elite competitors.
+                RecoverEaseFit was founded with one mission: to make premium recovery and training equipment accessible to everyone — from weekend warriors to elite competitors.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
                 We obsess over the details so you don&apos;t have to. Every product in our catalog is rigorously tested for durability, performance, and comfort before it reaches your door.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Based in Los Angeles, we&apos;re a team of coaches, trainers, and fitness enthusiasts who believe recovery is just as important as the workout itself.
+                Based in London, we&apos;re a team of coaches, trainers, and fitness enthusiasts who believe recovery is just as important as the workout itself.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -148,11 +148,10 @@ export default async function ShopPage() {
               Have a question about an order or product? We&apos;re here to help — reach out any time.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-2xl mx-auto w-full">
             {[
-              { icon: '📍', title: 'Address', body: '123 Fitness St., Los Angeles, CA 90001' },
-              { icon: '📞', title: 'Phone',   body: '+1 (800) 123-4567' },
-              { icon: '✉️', title: 'Email',   body: 'support@fitnessgear.com' },
+              { icon: '📍', title: 'Address', body: 'Office 14028, 182-184 High Street North, East Ham, London, E6 2JA' },
+              { icon: '✉️', title: 'Email',   body: 'support@recovereasefit.com' },
             ].map(({ icon, title, body }) => (
               <div key={title} className="text-center p-6 rounded-2xl bg-gray-50">
                 <div className="text-3xl mb-3">{icon}</div>
@@ -204,10 +203,10 @@ export default async function ShopPage() {
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-4">Fitness Gear</h3>
-              <p className="text-gray-300">123 Fitness St.</p>
-              <p className="text-gray-300">Los Angeles, CA 90001</p>
-              <p className="text-gray-300 mt-2">+1 (800) 123-4567</p>
+              <h3 className="font-bold text-lg mb-4">RecoverEaseFit</h3>
+              <p className="text-gray-300">Office 14028, 182-184 High Street North</p>
+              <p className="text-gray-300">East Ham, London, E6 2JA</p>
+              <p className="text-gray-300 mt-2">support@recovereasefit.com</p>
             </div>
           </div>
         </div>

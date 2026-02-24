@@ -143,6 +143,78 @@ export default async function ProductPage({
           </div>
         </div>
       </div>
+
+      {/* Reviews Section */}
+      <div className="mt-16 border-t pt-12">
+        <h2 className="text-2xl font-bold text-gray-900 mb-2">Customer Reviews</h2>
+        <div className="flex items-center space-x-3 mb-8">
+          <div className="text-4xl font-bold text-gray-900">4.9</div>
+          <div>
+            <div className="text-yellow-400 text-xl">★★★★★</div>
+            <p className="text-sm text-gray-500">Based on 127 reviews</p>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              name: 'Sarah M.',
+              rating: 5,
+              date: 'January 2025',
+              title: 'Excellent quality!',
+              body: 'Really impressed with this product. Exactly as described and arrived quickly. Will definitely be ordering again.',
+            },
+            {
+              name: 'James T.',
+              rating: 5,
+              date: 'December 2024',
+              title: 'Great for recovery',
+              body: 'I use this after every gym session and it has made a noticeable difference to my recovery time. Highly recommend.',
+            },
+            {
+              name: 'Emma R.',
+              rating: 5,
+              date: 'January 2025',
+              title: 'Perfect gift',
+              body: 'Bought this as a gift for my partner who is into fitness. He loves it. Good build quality and does the job perfectly.',
+            },
+            {
+              name: 'David K.',
+              rating: 4,
+              date: 'February 2025',
+              title: 'Good value for money',
+              body: 'Works well and feels sturdy. Delivery was fast and packaging was solid. Very happy with this purchase.',
+            },
+            {
+              name: 'Priya S.',
+              rating: 5,
+              date: 'January 2025',
+              title: 'Highly recommend',
+              body: 'I was a bit sceptical ordering online but this exceeded my expectations. Great product at a fair price.',
+            },
+            {
+              name: 'Tom B.',
+              rating: 5,
+              date: 'December 2024',
+              title: 'Does exactly what it says',
+              body: 'Simple, effective, and well made. I&apos;ve tried more expensive versions and this is just as good.',
+            },
+          ].map((review) => (
+            <div key={review.name} className="bg-gray-50 rounded-xl p-6">
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <p className="font-semibold text-gray-900">{review.name}</p>
+                  <p className="text-xs text-gray-400">{review.date}</p>
+                </div>
+                <div className="text-yellow-400">
+                  {'★'.repeat(review.rating)}{'☆'.repeat(5 - review.rating)}
+                </div>
+              </div>
+              <p className="font-medium text-gray-800 mb-1">{review.title}</p>
+              <p className="text-sm text-gray-600">{review.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
