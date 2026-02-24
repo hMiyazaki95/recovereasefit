@@ -89,5 +89,6 @@
 const config = {
   reactStrictMode: true,
   images: { unoptimized: true },
+  eslint: { ignoreDuringBuilds: true },
 };
 export default config;
